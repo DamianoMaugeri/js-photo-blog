@@ -23,6 +23,7 @@ axios.get(endPoint, {
 
     })
     .catch((err) => {
+        console.error(err)
 
     })
 
@@ -32,22 +33,5 @@ axios.get(endPoint, {
 
 
 
-/*
-const card4 = myCreateElement4("div", ["col"],
-    [
-        myCreateElement4("div", ["card"], [
-            myCreateElement4("figure", ["card-title"], [
-                myCreateElement4("img", ["card-image-top"], [],
-                    (el) => (el.src = "https://picsum.photos/id/237/200/300")
-                )
-            ]),
-            myCreateElement4("p", ["card-body"], [
-                myCreateElement4("h3", [], "description")
-            ]),
-        ]
-        ),
-    ]
-);
 
-*/
 
