@@ -1,0 +1,147 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+
+}
+
+/* layout */
+
+
+.main-section .container {
+    width: 100%;
+    padding: 0 50px;
+    margin: auto;
+    margin: 50px 0;
+
+
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 20px;
+
+}
+
+.col {
+    padding: 0 10px;
+    width: 100%;
+}
+
+
+
+body {
+    background-image: url(../img/cork.png);
+    background-size: cover;
+}
+
+
+/* header */
+.main-header {
+    height: 100%;
+    background-image: url(../img/wall.png);
+    background-size: cover;
+    text-align: center;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* main */
+
+
+
+
+
+/* card */
+.card {
+    background-color: white;
+    padding: 15px;
+    position: relative;
+    height: 100%;
+}
+
+.card-body {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.card::after {
+    position: absolute;
+    height: 30px;
+    aspect-ratio: 1/1;
+    border-radius: 999px;
+    background-image: url(../img/pin.svg);
+    content: '';
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 80%);
+}
+
+
+
+
+
+
+.img {
+
+    width: 100%;
+    background-color: aquamarine;
+    aspect-ratio: 1/1;
+}
+
+
+
+
+
+
+/* media queries */
+
+
+/* tablet */
+@media (min-width: 768px) {
+
+    .col {
+        width: 50%;
+    }
+}
+
+
+
+/* desktop */
+
+@media (min-width:992px) {
+
+    /* layout */
+
+    main .container {
+        max-width: 1470px;
+    }
+
+    .col {
+        width: calc(100% / 3);
+
+    }
+
+}
