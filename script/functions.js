@@ -95,8 +95,7 @@ function createAndRemoveOverlay(photo, root) {
     root.appendChild(overlay);
 
     clearButton.addEventListener('click', () => {
-        overlay.remove();
-        document.body.style.overflow = 'auto';
+        overlayRemove(overlay);
 
     })
 
@@ -105,8 +104,7 @@ function createAndRemoveOverlay(photo, root) {
         const targetElement = e.target
         if (!(targetElement === clearButton || targetElement === overlay_img)) {
 
-            overlay.remove();
-            document.body.style.overflow = 'auto';
+            overlayRemove(overlay);
 
         }
     })
@@ -116,9 +114,11 @@ function createAndRemoveOverlay(photo, root) {
 
 
 
+function overlayRemove(el) {
+    el.remove();
+    document.body.style.overflow = 'auto';
 
-
-
+}
 
 
 
