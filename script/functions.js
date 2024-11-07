@@ -106,6 +106,7 @@ function createAndRemoveOverlay(photo, root) {
         if (!(targetElement === clearButton || targetElement === overlay_img)) {
 
             overlay.remove();
+            document.body.style.overflow = 'auto';
 
         }
     })
