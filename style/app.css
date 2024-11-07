@@ -85,6 +85,7 @@ body {
     scale: 1.1;
     transform: rotate(10deg);
     z-index: 10;
+    cursor: pointer;
 }
 
 .card:hover::after {
