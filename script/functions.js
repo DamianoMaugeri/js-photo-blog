@@ -36,7 +36,7 @@ function myCreateElement4(
 
 
 
-function appendPhoto(photos, root) {
+function appendPhoto(photos, root, viewport) {
 
     photos.forEach(photo => {
 
@@ -59,7 +59,8 @@ function appendPhoto(photos, root) {
         );
 
         card.addEventListener('click', () => {
-            createAndRemoveOverlay(photo, viewportElement)
+            createAndRemoveOverlay(photo, viewport);
+            document.body.style.overflow = 'hidden';
 
         })
 
@@ -77,13 +78,16 @@ function appendPhoto(photos, root) {
 function createAndRemoveOverlay(photo, root) {
 
     const { url } = photo
-    const clearButton = myCreateElement4("button", ["overlay-btn"], "chiudi")
+    const clearButton = myCreateElement4("button", ["overlay-btn"], closebuttonicon);
+    const overlay_img = myCreateElement4("img", [], [], (el) => (el.src = `${url}`));
+
+
     const overlay = myCreateElement4("div", ["overlay"],
         [
             myCreateElement4("div", ["container-overlay"],
                 [
                     clearButton,
-                    myCreateElement4("img", [], [], (el) => (el.src = `${url}`))
+                    overlay_img
                 ]),
         ]
     );
@@ -92,10 +96,21 @@ function createAndRemoveOverlay(photo, root) {
 
     clearButton.addEventListener('click', () => {
         overlay.remove();
+        document.body.style.overflow = 'auto';
+
+    })
+
+    overlay.addEventListener('click', (e) => {
+
+        const targetElement = e.target
+        if (!(targetElement === clearButton || targetElement === overlay_img)) {
+
+            overlay.remove();
+
+        }
     })
 
 }
-
 
 
 

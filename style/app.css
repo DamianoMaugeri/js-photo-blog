@@ -84,6 +84,7 @@ body {
 .card:hover {
     scale: 1.1;
     transform: rotate(10deg);
+    z-index: 10;
 }
 
 .card:hover::after {
@@ -126,11 +127,8 @@ body {
 /* overlay */
 
 .container-overlay {
-    width: 40%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    width: 60%;
+
 }
 
 .overlay {
@@ -141,6 +139,23 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+}
+
+.overlay-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
 }
 
 
@@ -156,6 +171,11 @@ body {
 
     .col {
         width: 50%;
+    }
+
+    .container-overlay {
+        width: 50%;
+
     }
 }
 
@@ -173,6 +193,11 @@ body {
 
     .col {
         width: calc(100% / 3);
+
+    }
+
+    .container-overlay {
+        width: 40%;
 
     }
 
