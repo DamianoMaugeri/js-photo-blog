@@ -58,8 +58,12 @@ function appendPhoto(photos, root) {
             ]
         );
 
-        root.appendChild(card)
+        card.addEventListener('click', () => {
+            createAndRemoveOverlay(photo, viewportElement)
 
+        })
+
+        root.appendChild(card)
 
 
     });
@@ -67,6 +71,34 @@ function appendPhoto(photos, root) {
 
 
 }
+
+
+
+function createAndRemoveOverlay(photo, root) {
+
+    const { url } = photo
+    const clearButton = myCreateElement4("button", ["overlay-btn"], "chiudi")
+    const overlay = myCreateElement4("div", ["overlay"],
+        [
+            myCreateElement4("div", ["container-overlay"],
+                [
+                    clearButton,
+                    myCreateElement4("img", [], [], (el) => (el.src = `${url}`))
+                ]),
+        ]
+    );
+
+    root.appendChild(overlay);
+
+    clearButton.addEventListener('click', () => {
+        overlay.remove();
+    })
+
+}
+
+
+
+
 
 
 

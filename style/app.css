@@ -28,8 +28,7 @@ img {
 .main-section .container {
     width: 100%;
     padding: 0 50px;
-    margin: auto;
-    margin: 50px 0;
+    margin: 50px auto;
 
 
 }
@@ -82,6 +81,17 @@ body {
     height: 100%;
 }
 
+.card:hover {
+    scale: 1.1;
+    transform: rotate(10deg);
+}
+
+.card:hover::after {
+    display: none;
+}
+
+
+
 .card-body {
     margin: 10px 0;
     text-align: center;
@@ -109,6 +119,28 @@ body {
     width: 100%;
     background-color: aquamarine;
     aspect-ratio: 1/1;
+}
+
+
+
+/* overlay */
+
+.container-overlay {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.overlay {
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 

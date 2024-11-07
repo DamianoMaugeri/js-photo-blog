@@ -1,6 +1,7 @@
 console.log('test')
 
 const albumElement = document.querySelector('.album')
+const viewportElement = document.getElementById('page-viewport')
 
 const baseUrl = 'https://jsonplaceholder.typicode.com/'
 
@@ -14,19 +15,19 @@ axios.get(endPoint, {
         _limit: 6
     }
 })
-    .then((res) => {
+    .then((res) => { // Success
         const photos = res.data
 
         appendPhoto(photos, albumElement)
-
         console.log(photos)
 
-    })
-    .catch((err) => {
-        console.error(err)
+
 
     })
-
+    .catch((err) => { // Error
+        console.log(err);
+        errorMsg.innerHTML = err.message;
+    });
 
 
 
